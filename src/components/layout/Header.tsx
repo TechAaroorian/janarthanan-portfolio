@@ -2,7 +2,7 @@ import React from "react";
 import { ThemeToggle } from "../ui/ThemeToggle";
 import { Printer } from "lucide-react";
 
-// Custom Brand Icons (since Lucide removed trademarked brand logos)
+// Custom Brand Icons
 const GithubIcon: React.FC<{ size?: number }> = ({ size = 18 }) => (
   <svg
     width={size}
@@ -46,12 +46,13 @@ export const Header: React.FC = () => {
       {/* ATS Hidden Fallback for Web Crawlers */}
       <div className="sr-only">
         <h1>
-          Janarthanan Soundhararajan - Senior Frontend Developer & Solution
+          Janarthanan Soundhararajan - Senior Software Engineer & Solution
           Architect
         </h1>
         <p>
-          10 years experience in React.js, Next.js, TypeScript, Node.js,
-          Express, MySQL, Zustand, Redux, and GenAI workflows.
+          Nearly 10 years experience in React.js, Next.js, React Native,
+          TypeScript, Node.js, Express, MySQL, Jotai, TanStack Query, Redux, and
+          Agentic AI workflows.
         </p>
       </div>
 
@@ -60,7 +61,7 @@ export const Header: React.FC = () => {
           <div className="flex items-center gap-3 mb-2">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              Available for Solution Architecture Roles
+              Immediately Available • 0 Days Notice Period
             </span>
           </div>
 
@@ -68,12 +69,19 @@ export const Header: React.FC = () => {
             Janarthanan Soundhararajan
           </h1>
           <p className="text-lg font-medium text-cyan-600 dark:text-cyan-400 mt-1">
-            Senior Frontend Developer & Solution Architect
+            Senior Software Engineer{" "}
+            <span className="text-slate-500 dark:text-slate-400 font-normal text-base">
+              (with Solution Architect Responsibilities)
+            </span>
           </p>
           <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-2xl leading-relaxed">
-            Architecting scalable web applications, modern state engines
-            (Zustand, TanStack Query), performance profiling, and agentic AI
-            integrations with nearly 10 years of enterprise experience.
+            Architecting scalable web and mobile applications, state boundaries
+            (TanStack Query, Jotai), frontend-backend data contracts, and
+            agentic AI integrations (
+            <code className="px-1 py-0.5 bg-slate-200 dark:bg-slate-800 rounded text-xs font-mono">
+              CLAUDE.md
+            </code>
+            ) with nearly 10 years of enterprise experience.
           </p>
         </div>
 
