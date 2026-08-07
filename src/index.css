@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+/* 1. Define custom dark variant (Class-based dark mode toggle) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* 2. Custom Theme Design Tokens */
+@theme {
+  --color-brand-50: #f0f9ff;
+  --color-brand-500: #06b6d4; /* Cyan accent */
+  --color-brand-900: #0f172a; /* Dark slate background */
+}
+
+/* 3. Global Base & Print Styles */
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200 antialiased;
+  }
+}
+
+/* 4. CSS @media print Overrides for Clean PDF Export */
+@media print {
+  html, body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt;
+  }
+
+  /* Hide web-only interactive UI */
+  .no-print, nav, button, .theme-toggle {
+    display: none !important;
+  }
+
+  /* Page break safeguards for print view */
+  section, .card {
+    page-break-inside: avoid;
+  }
+
+  h1, h2, h3 {
+    page-break-after: avoid;
+  }
+}
