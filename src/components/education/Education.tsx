@@ -15,14 +15,14 @@ const degrees: Degree[] = [
     institution: "Anjalai Ammal Mahalingam Engineering College",
     year: "2016",
     location: "Thiruvarur, Tamil Nadu",
-    note: "Software Engineering, Database Systems mariyu Computer Science Foundations.",
+    note: "Software Engineering, Database Systems, and Computer Science Foundations.",
   },
   {
     degree: "Bachelor of Science in Information Technology (B.Sc IT)",
     institution: "Nethaji Subash Chandra Bose College",
     year: "2013",
     location: "Thiruvarur, Tamil Nadu",
-    note: "Information Technology Fundamentals, Programming Logic mariyu Web Basics.",
+    note: "Information Technology Fundamentals, Programming Logic, and Web Basics.",
   },
 ];
 
@@ -37,7 +37,7 @@ export const Education: React.FC = () => {
           Education & Academic Background
         </h2>
         <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
-          Academic degree details mariyu computer science foundations.
+          Academic degree details and computer science foundations.
         </p>
       </div>
 

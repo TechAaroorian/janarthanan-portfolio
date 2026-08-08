@@ -3,79 +3,101 @@ import * as d3 from "d3";
 
 interface SkillData {
   name: string;
-  category:
-    | "Frontend & Mobile"
-    | "Architecture & Tooling"
-    | "AI Workflows"
-    | "Backend Roots";
+  category: "Frontend & Mobile" | "Architecture & AI" | "Backend & Testing";
   startYear: number;
+  endYear: number;
+  displayRange: string;
   proficiency: number;
   details: string;
 }
 
 const skills: SkillData[] = [
   {
-    name: "Scala & Backend Roots",
-    category: "Backend Roots",
-    startYear: 2016,
-    proficiency: 78,
+    name: "Scala with Postgres",
+    category: "Backend & Testing",
+    startYear: 2016.92,
+    endYear: 2017.92,
+    displayRange: "Dec 2016 – Dec 2017 (Approx.)",
+    proficiency: 80,
     details:
-      "Started career engineering backend services and business logic with Scala & MySQL schemas.",
+      "Managed database indexing, server-side business logic, and schema persistence in MySQL & Postgres during early backend tenure.",
   },
   {
-    name: "React JS & Redux",
-    category: "Frontend & Mobile",
-    startYear: 2017,
-    proficiency: 95,
+    name: "Monolith & Services",
+    category: "Architecture & AI",
+    startYear: 2016.92,
+    endYear: 2026,
+    displayRange: "Dec 2016 – Present (Approx.)",
+    proficiency: 92,
     details:
-      "Transitioned to web UIs with vanilla React JS and Redux state management.",
+      "Designing clean domain boundaries, decoupled modular monoliths, and robust frontend-backend API contracts.",
   },
   {
-    name: "React + TypeScript",
+    name: "React JS",
     category: "Frontend & Mobile",
-    startYear: 2018,
+    startYear: 2017.92,
+    endYear: 2026,
+    displayRange: "Dec 2017 – Present (Approx.)",
     proficiency: 95,
     details:
-      "Adopted strict TypeScript contract design, custom hooks, and complex web applications.",
+      "Architecting scalable single-page applications, SSR/SSG workflows, Next.js App Router, and component libraries.",
+  },
+  {
+    name: "TypeScript",
+    category: "Frontend & Mobile",
+    startYear: 2018.0,
+    endYear: 2026,
+    displayRange: "2018 – Present (Approx.)",
+    proficiency: 92,
+    details:
+      "Enforcing strict type safety, generic utility types, and runtime schema validation contracts across large codebases.",
   },
   {
     name: "React Native",
     category: "Frontend & Mobile",
-    startYear: 2020,
+    startYear: 2018.0,
+    endYear: 2020.0,
+    displayRange: "2018 – 2020 (Approx.)",
     proficiency: 85,
     details:
-      "Built cross-platform mobile apps for ~2 years with shared state logic and native integrations.",
+      "Built cross-platform mobile application flows, native bridge integrations, and shared state management models.",
   },
   {
-    name: "TanStack Query & Jotai",
-    category: "Architecture & Tooling",
-    startYear: 2023,
-    proficiency: 92,
-    details:
-      "2+ years managing server-state caching, optimistic UI updates, and atomic global state.",
-  },
-  {
-    name: "Next.js, Turbopack & Prisma",
-    category: "Architecture & Tooling",
-    startYear: 2024,
+    name: "Testing (RTL & MSW)",
+    category: "Backend & Testing",
+    startYear: 2022.0,
+    endYear: 2026,
+    displayRange: "2022 – Present (Approx.)",
     proficiency: 88,
     details:
-      "8 months of Turbopack build optimization, Next.js App Router, and modern Prisma ORM integrations.",
+      "Established automated testing strategies using React Testing Library and Mock Service Worker (MSW) for API interception.",
   },
   {
-    name: "Agentic AI & Context Eng.",
-    category: "AI Workflows",
-    startYear: 2024,
+    name: "TanStack Query",
+    category: "Frontend & Mobile",
+    startYear: 2024.0,
+    endYear: 2026,
+    displayRange: "2024 – Present (Approx.)",
+    proficiency: 90,
+    details:
+      "Implemented clean server-state caching, optimistic updates, and background cache invalidation to eliminate Redux overhead.",
+  },
+  {
+    name: "Agentic AI & Tooling",
+    category: "Architecture & AI",
+    startYear: 2024.0,
+    endYear: 2026,
+    displayRange: "2024 – Present (Approx.)",
     proficiency: 88,
     details:
-      "Repository context engineering via CLAUDE.md & amazonq configs for autonomous AI agents.",
+      "Repository context engineering via CLAUDE.md & .amazonq rules to guide autonomous AI agents within system boundaries.",
   },
 ];
 
 export const SkillTimeline: React.FC = () => {
   const svgRef = useRef<SVGSVGElement | null>(null);
   const [selectedSkill, setSelectedSkill] = useState<SkillData | null>(
-    skills[0],
+    skills[2],
   );
 
   useEffect(() => {
@@ -83,9 +105,9 @@ export const SkillTimeline: React.FC = () => {
 
     d3.select(svgRef.current).selectAll("*").remove();
 
-    const margin = { top: 20, right: 30, bottom: 40, left: 140 };
-    const width = 820 - margin.left - margin.right;
-    const height = 340 - margin.top - margin.bottom;
+    const margin = { top: 25, right: 35, bottom: 45, left: 180 };
+    const width = 860 - margin.left - margin.right;
+    const height = 380 - margin.top - margin.bottom;
 
     const svg = d3
       .select(svgRef.current)
@@ -96,39 +118,50 @@ export const SkillTimeline: React.FC = () => {
       .append("g")
       .attr("transform", `translate(${margin.left},${margin.top})`);
 
-    const xScale = d3.scaleLinear().domain([2015, 2026]).range([0, width]);
+    const xScale = d3.scaleLinear().domain([2016, 2026]).range([0, width]);
 
     const yScale = d3
       .scalePoint()
       .domain(skills.map((d) => d.name))
       .range([0, height])
-      .padding(0.5);
+      .padding(0.6);
 
     const colorScale = d3
       .scaleOrdinal<string>()
-      .domain([
-        "Frontend & Mobile",
-        "Architecture",
-        "AI Workflows",
-        "Testing & Backend",
-      ])
-      .range(["#06b6d4", "#10b981", "#f59e0b", "#6366f1"]);
+      .domain(["Frontend & Mobile", "Architecture & AI", "Backend & Testing"])
+      .range(["#06b6d4", "#10b981", "#6366f1"]);
 
-    const xAxis = d3.axisBottom(xScale).tickFormat(d3.format("d")).ticks(6);
+    // Year X-Axis ticks
+    const xAxis = d3.axisBottom(xScale).tickFormat(d3.format("d")).ticks(10);
 
     svg
       .append("g")
       .attr("transform", `translate(0, ${height})`)
       .call(xAxis)
-      .attr("class", "text-slate-400 text-xs")
+      .attr("class", "text-slate-400 text-xs font-mono")
       .selectAll("text")
-      .attr("fill", "currentColor");
+      .attr("fill", "currentColor")
+      .attr("dy", "1.2em");
 
+    // Render Timeline Tracks and Nodes
     skills.forEach((skill) => {
       const yPos = yScale(skill.name) ?? 0;
       const xStart = xScale(skill.startYear);
-      const xEnd = xScale(2026);
+      const xEnd = xScale(skill.endYear);
 
+      // 1. Background dashed track
+      svg
+        .append("line")
+        .attr("x1", 0)
+        .attr("y1", yPos)
+        .attr("x2", width)
+        .attr("y2", yPos)
+        .attr("stroke", "#334155")
+        .attr("stroke-width", 1)
+        .attr("stroke-dasharray", "2,4")
+        .attr("opacity", 0.2);
+
+      // 2. Active duration track line
       svg
         .append("line")
         .attr("x1", xStart)
@@ -136,71 +169,114 @@ export const SkillTimeline: React.FC = () => {
         .attr("x2", xEnd)
         .attr("y2", yPos)
         .attr("stroke", colorScale(skill.category))
-        .attr("stroke-width", 4)
+        .attr("stroke-width", 6)
         .attr("stroke-linecap", "round")
-        .attr("opacity", 0.35);
+        .attr("opacity", 0.85);
 
-      svg
-        .append("circle")
-        .attr("cx", xStart)
-        .attr("cy", yPos)
-        .attr("r", 6)
-        .attr("fill", colorScale(skill.category))
-        .attr("class", "cursor-pointer transition-transform hover:scale-125")
-        .on("click", () => setSelectedSkill(skill))
-        .on("mouseover", function () {
-          d3.select(this).attr("r", 9);
-        })
-        .on("mouseout", function () {
-          d3.select(this).attr("r", 6);
-        });
+      // 3. Helper function to append rock-solid interactive nodes
+      const addInteractiveNode = (cx: number, cy: number) => {
+        const group = svg
+          .append("g")
+          .attr("class", "cursor-pointer")
+          .on("click", () => setSelectedSkill(skill));
+
+        // Invisible hit target
+        group
+          .append("circle")
+          .attr("cx", cx)
+          .attr("cy", cy)
+          .attr("r", 12)
+          .attr("fill", "transparent");
+
+        // Visible node circle with explicit SVG transform-box properties
+        const node = group
+          .append("circle")
+          .attr("cx", cx)
+          .attr("cy", cy)
+          .attr("r", 5)
+          .attr("fill", colorScale(skill.category))
+          .style("transform-box", "fill-box")
+          .style("transform-origin", "center")
+          .style("transition", "transform 0.2s ease-out");
+
+        // Mouse hover interactions anchoring r & scale
+        group
+          .on("mouseenter", () => {
+            node.style("transform", "scale(1.6)");
+          })
+          .on("mouseleave", () => {
+            node.style("transform", "scale(1)");
+          });
+      };
+
+      // Add start node
+      addInteractiveNode(xStart, yPos);
+
+      // Add end node if timeframe completed
+      if (skill.endYear < 2026) {
+        addInteractiveNode(xEnd, yPos);
+      }
     });
 
+    // Y Axis Labels
     const yAxis = d3.axisLeft(yScale);
     svg
       .append("g")
       .call(yAxis)
-      .attr("class", "text-slate-700 dark:text-slate-300 font-medium text-xs")
+      .attr("class", "text-slate-700 dark:text-slate-300 font-semibold text-xs")
       .selectAll("text")
-      .attr("fill", "currentColor");
+      .attr("fill", "currentColor")
+      .attr("dx", "-0.5em");
   }, []);
 
   return (
-    <section id="timeline" className="py-6">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-6">
+    <section
+      id="timeline"
+      className="py-6 border-b border-slate-200 dark:border-slate-800 transition-colors scroll-mt-6"
+    >
+      <div className="mb-6 flex flex-col md:flex-row justify-between items-start md:items-center">
         <div>
-          <h2 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">
-            Technical Skill Evolution Timeline
-          </h2>
-          <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
-            Interactive visualization tracking architecture adoption &
-            technology milestones.
+          <div className="flex items-center gap-2">
+            <h2 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">
+              Technical Skill Evolution Timeline
+            </h2>
+            <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-700">
+              Approximate Timeline
+            </span>
+          </div>
+          <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
+            Chronological adoption of core technologies, architectures, and
+            engineering tooling (2016 – Present).{" "}
+            <span className="italic text-slate-400 dark:text-slate-500">
+              *Note: Dates and duration metrics shown are approximate estimates
+              representing primary usage periods.
+            </span>
           </p>
         </div>
       </div>
 
-      {/* Web Interactive Timeline */}
-      <div className="no-print bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm">
-        <div className="w-full overflow-x-auto">
-          <svg ref={svgRef} className="w-full h-auto min-w-[600px]"></svg>
+      {/* 1. DESKTOP / TABLET: D3 Interactive SVG Chart */}
+      <div className="hidden md:block no-print bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-6 shadow-sm">
+        <div className="w-full">
+          <svg ref={svgRef} className="w-full h-auto overflow-visible"></svg>
         </div>
 
         {selectedSkill && (
           <div className="mt-6 pt-4 border-t border-slate-200 dark:border-slate-800 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-slate-50 dark:bg-slate-950 p-4 rounded-lg">
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-semibold text-slate-900 dark:text-white text-base">
+                <span className="font-bold text-slate-900 dark:text-white text-base">
                   {selectedSkill.name}
                 </span>
-                <span className="text-xs px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 font-medium border border-cyan-500/20">
-                  {selectedSkill.category} • Adopted {selectedSkill.startYear}
+                <span className="text-[11px] px-2.5 py-0.5 rounded-full bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 font-mono border border-cyan-500/20">
+                  {selectedSkill.category} • {selectedSkill.displayRange}
                 </span>
               </div>
               <p className="text-xs text-slate-600 dark:text-slate-400 mt-1.5 max-w-2xl leading-relaxed">
                 {selectedSkill.details}
               </p>
             </div>
-            <div className="w-full md:w-32 bg-slate-200 dark:bg-slate-800 rounded-full h-2 overflow-hidden">
+            <div className="w-full md:w-32 bg-slate-200 dark:bg-slate-800 rounded-full h-2 overflow-hidden shrink-0">
               <div
                 className="bg-cyan-500 h-2 rounded-full"
                 style={{ width: `${selectedSkill.proficiency}%` }}
@@ -210,15 +286,37 @@ export const SkillTimeline: React.FC = () => {
         )}
       </div>
 
-      {/* ATS & Print Fallback */}
-      <div className="hidden print:block sr-only print:not-sr-only mt-4">
-        <h3 className="text-lg font-bold text-black border-b border-gray-400 pb-1 mb-3">
-          Core Technical Capabilities
+      {/* 2. MOBILE ONLY: Clean Card List */}
+      <div className="md:hidden no-print space-y-3">
+        {skills.map((skill, idx) => (
+          <div
+            key={idx}
+            className="p-4 rounded-xl bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 shadow-xs"
+          >
+            <div className="flex items-center justify-between gap-2 mb-1">
+              <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                {skill.name}
+              </h3>
+              <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-600 dark:text-cyan-400 border border-cyan-500/20 shrink-0">
+                {skill.displayRange}
+              </span>
+            </div>
+            <p className="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
+              {skill.details}
+            </p>
+          </div>
+        ))}
+      </div>
+
+      {/* 3. PRINT FALLBACK VIEW */}
+      <div className="hidden print:block mt-4">
+        <h3 className="text-sm font-bold text-black border-b border-gray-400 pb-1 mb-2">
+          Technical Evolution & Timeline (Approximate Dates)
         </h3>
-        <div className="grid grid-cols-2 gap-4 text-xs text-black">
+        <div className="grid grid-cols-2 gap-3 text-xs text-black">
           {skills.map((skill) => (
             <div key={skill.name}>
-              <strong>{skill.name}</strong> ({skill.startYear}–Present):{" "}
+              <strong>{skill.name}</strong> ({skill.displayRange}):{" "}
               {skill.details}
             </div>
           ))}

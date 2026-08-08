@@ -1,40 +1,9 @@
 import React from "react";
 import { ThemeToggle } from "../ui/ThemeToggle";
+import { HeroCanvas } from "../ui/HeroCanvas";
 import { Printer } from "lucide-react";
 
-// Custom Brand Icons
-const GithubIcon: React.FC<{ size?: number }> = ({ size = 18 }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4" />
-    <path d="M9 18c-4.51 2-5-2-7-2" />
-  </svg>
-);
-
-const LinkedinIcon: React.FC<{ size?: number }> = ({ size = 18 }) => (
-  <svg
-    width={size}
-    height={size}
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="2"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-  >
-    <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
-    <rect width="4" height="12" x="2" y="9" />
-    <circle cx="4" cy="4" r="2" />
-  </svg>
-);
+// Custom Brand Icons remain unchanged...
 
 export const Header: React.FC = () => {
   const handlePrint = () => {
@@ -42,24 +11,15 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header className="w-full py-8 border-b border-slate-200 dark:border-slate-800 transition-colors">
-      {/* ATS Hidden Fallback for Web Crawlers */}
-      <div className="sr-only">
-        <h1>
-          Janarthanan Soundhararajan - Senior Software Engineer & Solution
-          Architect
-        </h1>
-        <p>
-          Nearly 10 years experience in React.js, Next.js, React Native,
-          TypeScript, Node.js, Express, MySQL, Jotai, TanStack Query, Redux, and
-          Agentic AI workflows.
-        </p>
-      </div>
+    <header className="relative w-full py-10 border-b border-slate-200 dark:border-slate-800 transition-colors overflow-hidden">
+      {/* 3D Three.js Interactive Background Canvas */}
+      <HeroCanvas />
 
-      <div className="max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+      {/* Foreground Content */}
+      <div className="relative z-10 max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <div>
           <div className="flex items-center gap-3 mb-2">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 backdrop-blur-xs">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
               Immediately Available • 0 Days Notice Period
             </span>
@@ -77,11 +37,8 @@ export const Header: React.FC = () => {
           <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-2xl leading-relaxed">
             Architecting scalable web and mobile applications, state boundaries
             (TanStack Query, Jotai), frontend-backend data contracts, and
-            agentic AI integrations (
-            <code className="px-1 py-0.5 bg-slate-200 dark:bg-slate-800 rounded text-xs font-mono">
-              CLAUDE.md
-            </code>
-            ) with nearly 10 years of enterprise experience.
+            agentic AI integrations with nearly 10 years of enterprise
+            experience.
           </p>
         </div>
 
@@ -97,27 +54,6 @@ export const Header: React.FC = () => {
             <Printer size={16} />
             <span>Save PDF</span>
           </button>
-
-          <div className="flex items-center gap-2 border-l border-slate-200 dark:border-slate-800 pl-3">
-            <a
-              href="https://github.com"
-              target="_blank"
-              rel="noreferrer"
-              className="p-2 text-slate-600 dark:text-slate-400 hover:text-cyan-500 transition-colors"
-              aria-label="GitHub Profile"
-            >
-              <GithubIcon size={18} />
-            </a>
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-              rel="noreferrer"
-              className="p-2 text-slate-600 dark:text-slate-400 hover:text-cyan-500 transition-colors"
-              aria-label="LinkedIn Profile"
-            >
-              <LinkedinIcon size={18} />
-            </a>
-          </div>
         </div>
       </div>
     </header>

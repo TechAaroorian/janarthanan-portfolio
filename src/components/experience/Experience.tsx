@@ -111,7 +111,10 @@ const experiences: Role[] = [
 
 export const Experience: React.FC = () => {
   return (
-    <section className="py-6 border-b border-slate-200 dark:border-slate-800 transition-colors">
+    <section
+      id="experience"
+      className="py-6 border-b border-slate-200 dark:border-slate-800 transition-colors"
+    >
       <div className="mb-6 flex flex-col md:flex-row justify-between items-start md:items-center">
         <div>
           <h2 className="text-2xl font-bold text-slate-900 dark:text-white tracking-tight">
