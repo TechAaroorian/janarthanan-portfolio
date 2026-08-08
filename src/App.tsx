@@ -4,6 +4,7 @@ import { TechnicalSkills } from "./components/skills/TechnicalSkills";
 import { SkillTimeline } from "./components/skills/SkillTimeline";
 import { Experience } from "./components/experience/Experience";
 import { FloatingNav } from "./components/ui/FloatingNav";
+import { Education } from "./components/education/Education";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Experience />
         <TechnicalSkills />
         <SkillTimeline />
+        <Education />
       </main>
 
       {/* Floating Section Navigation */}
