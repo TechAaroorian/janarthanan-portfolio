@@ -1,41 +1,63 @@
 @import "tailwindcss";
 
-/* 1. Define custom dark variant (Class-based dark mode toggle) */
 @custom-variant dark (&:where(.dark, .dark *));
 
-/* 2. Custom Theme Design Tokens */
-@theme {
-  --color-brand-50: #f0f9ff;
-  --color-brand-500: #06b6d4; /* Cyan accent */
-  --color-brand-900: #0f172a; /* Dark slate background */
+html {
+  font-size: 105%;
+  scroll-behavior: smooth;
 }
 
-/* 3. Global Base & Print Styles */
-@layer base {
-  body {
-    @apply bg-slate-50 text-slate-900 dark:bg-slate-950 dark:text-slate-100 transition-colors duration-200 antialiased;
-  }
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
 }
 
-/* 4. CSS @media print Overrides for Clean PDF Export */
+/* ==========================================================================
+   🖨️ EXACT PRINT RESUME EXPORT (Matching Original Resume PDF Colors & Header)
+   ========================================================================== */
 @media print {
-  html, body {
-    background-color: #ffffff !important;
-    color: #000000 !important;
-    font-size: 11pt;
+  @page {
+    size: A4 portrait;
+    margin: 10mm 12mm 10mm 12mm;
   }
 
-  /* Hide web-only interactive UI */
-  .no-print, nav, button, .theme-toggle {
+  /* Force background to white and force exact color rendering */
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100% !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Hide ONLY the web wrapper container */
+  #web-portfolio-only {
     display: none !important;
   }
 
-  /* Page break safeguards for print view */
-  section, .card {
-    page-break-inside: avoid;
+  /* Ensure the print resume container and ALL its children render cleanly */
+  #print-resume-only,
+  #print-resume-only * {
+    visibility: visible !important;
   }
 
-  h1, h2, h3 {
-    page-break-after: avoid;
+  #print-resume-only {
+    display: block !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 0 !important;
+    width: 100% !important;
+    background: #ffffff !important;
+  }
+
+  /* Ensure flex and grid display correctly in PDF engines */
+  #print-resume-only .flex {
+    display: flex !important;
+  }
+
+  #print-resume-only .grid {
+    display: grid !important;
   }
 }
