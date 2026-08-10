@@ -3,8 +3,6 @@ import { ThemeToggle } from "../ui/ThemeToggle";
 import { HeroCanvas } from "../ui/HeroCanvas";
 import { Printer } from "lucide-react";
 
-// Custom Brand Icons remain unchanged...
-
 export const Header: React.FC = () => {
   const handlePrint = () => {
     window.print();
@@ -12,11 +10,13 @@ export const Header: React.FC = () => {
 
   return (
     <header className="relative w-full py-10 border-b border-slate-200 dark:border-slate-800 transition-colors overflow-hidden">
-      {/* 3D Three.js Interactive Background Canvas */}
+      {/* 3D Three.js Canvas - Background */}
       <HeroCanvas />
 
-      {/* Foreground Content - CHANGED max-w-5xl TO max-w-6xl to match main sections */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+      {/* Foreground Content:
+        • pointer-events-none allows mouse movements to pass through to Three.js canvas
+      */}
+      <div className="relative z-10 pointer-events-none max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <div>
           <div className="flex items-center gap-3 mb-2">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 backdrop-blur-xs">
@@ -42,8 +42,8 @@ export const Header: React.FC = () => {
             experience.
           </p>
 
-          {/* Clean Location & Domain Info (No physical street address) */}
-          <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 mt-3 font-mono flex-wrap">
+          {/* Location & Links (pointer-events-auto re-enables clicking on links) */}
+          <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 mt-3 font-mono flex-wrap pointer-events-auto">
             <span>📍 Thiruvarur, Tamil Nadu, India</span>
             <span>•</span>
             <a
@@ -64,8 +64,8 @@ export const Header: React.FC = () => {
           </div>
         </div>
 
-        {/* Action Controls */}
-        <div className="flex flex-wrap items-center gap-3 no-print">
+        {/* Action Controls (pointer-events-auto re-enables clicking on buttons) */}
+        <div className="flex flex-wrap items-center gap-3 no-print pointer-events-auto">
           <ThemeToggle />
 
           <button

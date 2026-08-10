@@ -25,22 +25,21 @@ export const HeroCanvas: React.FC = () => {
     renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     container.appendChild(renderer.domElement);
 
-    // Spread particles across a wide, uniform grid box
-    const particleCount = 65;
+    // Spread particles
+    const particleCount = 75;
     const geometry = new THREE.BufferGeometry();
     const positions = new Float32Array(particleCount * 3);
     const initialPositions = new Float32Array(particleCount * 3);
 
     for (let i = 0; i < particleCount * 3; i += 3) {
-      const x = (Math.random() - 0.5) * 60; // Uniform X spread
-      const y = (Math.random() - 0.5) * 35; // Uniform Y spread
-      const z = (Math.random() - 0.5) * 15; // Depth Z
+      const x = (Math.random() - 0.5) * 60;
+      const y = (Math.random() - 0.5) * 35;
+      const z = (Math.random() - 0.5) * 15;
 
       positions[i] = x;
       positions[i + 1] = y;
       positions[i + 2] = z;
 
-      // Store initial baseline positions for gentle wave offsets
       initialPositions[i] = x;
       initialPositions[i + 1] = y;
       initialPositions[i + 2] = z;
@@ -52,9 +51,9 @@ export const HeroCanvas: React.FC = () => {
 
     const material = new THREE.PointsMaterial({
       color: particleColor,
-      size: 0.5,
+      size: 0.6,
       transparent: true,
-      opacity: theme === "dark" ? 0.6 : 0.4,
+      opacity: theme === "dark" ? 0.8 : 0.6,
       blending: THREE.AdditiveBlending,
     });
 
@@ -65,20 +64,35 @@ export const HeroCanvas: React.FC = () => {
     const lineMaterial = new THREE.LineBasicMaterial({
       color: particleColor,
       transparent: true,
-      opacity: theme === "dark" ? 0.12 : 0.06,
+      opacity: theme === "dark" ? 0.2 : 0.1,
     });
 
     const lineGeometry = new THREE.BufferGeometry();
     const lineMesh = new THREE.LineSegments(lineGeometry, lineMaterial);
     scene.add(lineMesh);
 
-    // Mouse Shift (Subtle Parallax)
+    // Mouse Tracking in 3D Space
     let targetX = 0;
     let targetY = 0;
+    const mouse3D = new THREE.Vector3(999, 999, 0); // Active 3D cursor position
 
     const handleMouseMove = (event: MouseEvent) => {
-      targetX = (event.clientX / window.innerWidth - 0.5) * 2;
-      targetY = (event.clientY / window.innerHeight - 0.5) * 2;
+      // Normalized Device Coordinates (-1 to +1)
+      const ndcX = (event.clientX / window.innerWidth) * 2 - 1;
+      const ndcY = -(event.clientY / window.innerHeight) * 2 + 1;
+
+      targetX = ndcX;
+      targetY = ndcY;
+
+      // Project 2D screen mouse into 3D world space at z=0 plane
+      const vector = new THREE.Vector3(ndcX, ndcY, 0.5);
+      vector.unproject(camera);
+      const dir = vector.sub(camera.position).normalize();
+      const distance = -camera.position.z / dir.z;
+      const pos = camera.position.clone().add(dir.multiplyScalar(distance));
+
+      mouse3D.x = pos.x;
+      mouse3D.y = pos.y;
     };
 
     window.addEventListener("mousemove", handleMouseMove);
@@ -92,7 +106,7 @@ export const HeroCanvas: React.FC = () => {
 
     window.addEventListener("resize", handleResize);
 
-    // Animation Loop: Independent Floating Waves (No Swirling Axis)
+    // Animation Loop
     let animationFrameId: number;
     let clock = new THREE.Clock();
 
@@ -102,22 +116,42 @@ export const HeroCanvas: React.FC = () => {
       const elapsedTime = clock.getElapsedTime();
       const posAttr = geometry.attributes.position;
 
-      // Update individual particle positions with gentle sine-wave drift
+      // Update individual particles with Wave Motion + Mouse Repulsion
       for (let i = 0; i < particleCount; i++) {
         const i3 = i * 3;
         const initX = initialPositions[i3];
         const initY = initialPositions[i3 + 1];
+        const initZ = initialPositions[i3 + 2];
 
-        // Smooth wave floating motion
-        posAttr.setY(i3 + 1, initY + Math.sin(elapsedTime * 0.8 + initX) * 0.8);
-        posAttr.setX(i3, initX + Math.cos(elapsedTime * 0.5 + initY) * 0.5);
+        // 1. Natural floating sine wave baseline
+        let targetParticleX = initX + Math.cos(elapsedTime * 0.5 + initY) * 0.6;
+        let targetParticleY = initY + Math.sin(elapsedTime * 0.8 + initX) * 0.8;
+
+        // 2. Cursor Repulsion Math (Push particles away when cursor gets close)
+        const dx = targetParticleX - mouse3D.x;
+        const dy = targetParticleY - mouse3D.y;
+        const distToMouse = Math.sqrt(dx * dx + dy * dy);
+        const repulsionRadius = 12;
+
+        if (distToMouse < repulsionRadius) {
+          const force = (1 - distToMouse / repulsionRadius) * 4; // Push strength
+          const angle = Math.atan2(dy, dx);
+          targetParticleX += Math.cos(angle) * force;
+          targetParticleY += Math.sin(angle) * force;
+        }
+
+        // Smoothly lerp towards target position
+        const currentX = posAttr.getX(i);
+        const currentY = posAttr.getY(i);
+        posAttr.setX(i, currentX + (targetParticleX - currentX) * 0.1);
+        posAttr.setY(i, currentY + (targetParticleY - currentY) * 0.1);
       }
 
       posAttr.needsUpdate = true;
 
-      // Gentle camera parallax shift on mouse move (without global scene rotation)
-      camera.position.x += (targetX * 2 - camera.position.x) * 0.03;
-      camera.position.y += (-targetY * 2 - camera.position.y) * 0.03;
+      // 3. ENHANCED CAMERA PARALLAX (Range increased to 12 for high visibility)
+      camera.position.x += (targetX * 12 - camera.position.x) * 0.05;
+      camera.position.y += (targetY * 8 - camera.position.y) * 0.05;
       camera.lookAt(scene.position);
 
       // Re-calculate connecting lines
@@ -136,7 +170,7 @@ export const HeroCanvas: React.FC = () => {
             (x1 - x2) ** 2 + (y1 - y2) ** 2 + (z1 - z2) ** 2,
           );
 
-          if (dist < 11) {
+          if (dist < 12) {
             linePositions.push(x1, y1, z1);
             linePositions.push(x2, y2, z2);
           }
