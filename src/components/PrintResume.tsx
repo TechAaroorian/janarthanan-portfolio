@@ -30,8 +30,8 @@ export const PrintResume: React.FC = () => {
           </span>
           <span className="text-slate-300">•</span>
           <span className="flex items-center gap-1">
-            <strong className="text-[#0f172a]">Address:</strong> 12 A,
-            Thangarasu Colony, Maanandhiyar Street, Thiruvarur - 610001
+            <strong className="text-[#0f172a]">Address:</strong> Thiruvarur,
+            Tamil Nadu, India - 610001
           </span>
         </div>
       </div>
