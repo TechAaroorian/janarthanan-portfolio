@@ -1,4 +1,5 @@
 import React from "react";
+import { VisitorCounter } from "./ui/VisitorCounter";
 
 export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
@@ -14,7 +15,7 @@ export const Footer: React.FC = () => {
   return (
     <footer
       id="contact"
-      className="relative mt-20 border-t border-slate-800/80 bg-slate-950/80 backdrop-blur-xl text-slate-400"
+      className="print:hidden relative mt-20 border-t border-slate-800/80 bg-slate-950/80 backdrop-blur-xl text-slate-400 transition-colors"
     >
       <div className="max-w-6xl mx-auto px-4 py-12">
         {/* Top Header Row */}
@@ -47,11 +48,11 @@ export const Footer: React.FC = () => {
           <button
             onClick={scrollToTop}
             aria-label="Scroll back to top"
-            className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-indigo-500/50 text-xs font-semibold text-slate-300 hover:text-white transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-black/20"
+            className="group inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-cyan-500/50 text-xs font-semibold text-slate-300 hover:text-white transition-all duration-300 hover:-translate-y-0.5 shadow-lg shadow-black/20 cursor-pointer"
           >
             <span>Back to Top</span>
             <svg
-              className="w-4 h-4 text-indigo-400 group-hover:-translate-y-1 transition-transform"
+              className="w-4 h-4 text-cyan-400 group-hover:-translate-y-1 transition-transform"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -73,35 +74,51 @@ export const Footer: React.FC = () => {
             <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-200 mb-4 font-mono">
               Navigation
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2.5 text-xs">
               <li>
                 <a
-                  href="#about"
-                  className="hover:text-indigo-400 transition-colors"
+                  href="#summary"
+                  className="hover:text-cyan-400 transition-colors"
                 >
-                  About & Leadership
+                  Summary
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#experience"
+                  className="hover:text-cyan-400 transition-colors"
+                >
+                  Experience
                 </a>
               </li>
               <li>
                 <a
                   href="#skills"
-                  className="hover:text-indigo-400 transition-colors"
+                  className="hover:text-cyan-400 transition-colors"
                 >
-                  Skill Evolution Timeline
+                  Technical Skills
                 </a>
               </li>
               <li>
                 <a
-                  href="#projects"
-                  className="hover:text-indigo-400 transition-colors"
+                  href="#timeline"
+                  className="hover:text-cyan-400 transition-colors"
                 >
-                  Architecture Case Studies
+                  Skill Evolution
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#education"
+                  className="hover:text-cyan-400 transition-colors"
+                >
+                  Education
                 </a>
               </li>
               <li>
                 <a
                   href="#articles"
-                  className="hover:text-indigo-400 transition-colors"
+                  className="hover:text-cyan-400 transition-colors"
                 >
                   Technical Articles
                 </a>
@@ -114,13 +131,13 @@ export const Footer: React.FC = () => {
             <h4 className="text-xs font-semibold uppercase tracking-wider text-slate-200 mb-4 font-mono">
               Connect
             </h4>
-            <ul className="space-y-2.5">
+            <ul className="space-y-2.5 text-xs">
               <li>
                 <a
                   href="https://www.linkedin.com/in/janarthanan-soundararajan-0544ab85/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-indigo-400 transition-colors flex items-center gap-2"
+                  className="hover:text-cyan-400 transition-colors flex items-center gap-2"
                 >
                   <span>LinkedIn Profile</span>
                   <svg
@@ -143,7 +160,7 @@ export const Footer: React.FC = () => {
                   href="https://github.com/TechAaroorian"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-indigo-400 transition-colors flex items-center gap-2"
+                  className="hover:text-cyan-400 transition-colors flex items-center gap-2"
                 >
                   <span>GitHub Repositories</span>
                   <svg
@@ -166,7 +183,7 @@ export const Footer: React.FC = () => {
                   href="https://dev.to/janarthanan_soundararajan"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hover:text-indigo-400 transition-colors flex items-center gap-2"
+                  className="hover:text-cyan-400 transition-colors flex items-center gap-2"
                 >
                   <span>DEV.to Writings</span>
                   <svg
@@ -198,7 +215,7 @@ export const Footer: React.FC = () => {
             </p>
             <a
               href="mailto:janarthanan1821993@gmail.com"
-              className="inline-flex items-center gap-2 font-mono text-xs text-indigo-400 hover:text-indigo-300 underline underline-offset-4 decoration-indigo-500/40"
+              className="inline-flex items-center gap-2 font-mono text-xs text-cyan-400 hover:text-cyan-300 underline underline-offset-4 decoration-cyan-500/40"
             >
               janarthanan1821993@gmail.com
             </a>
@@ -210,7 +227,7 @@ export const Footer: React.FC = () => {
               Live Address
             </h4>
             <div className="p-3 rounded-lg bg-slate-900/80 border border-slate-800 font-mono text-xs text-slate-300">
-              <span className="text-indigo-400">https://</span>
+              <span className="text-cyan-400">https://</span>
               janarthanan-dev.com
             </div>
             <p className="text-[11px] text-slate-500 mt-2">
@@ -219,11 +236,15 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4">
+        {/* Bottom Bar: Copyright, Tech Stack, & GoatCounter Live Analytics Badge */}
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-slate-500 gap-4">
           <p>
             © {currentYear} Janarthanan Soundhararajan. All rights reserved.
           </p>
+
+          {/* Live GoatCounter Visitor Badge Component */}
+          <VisitorCounter />
+
           <p className="flex items-center gap-1.5 font-mono">
             <span>Engineered with</span>
             <span className="text-slate-300 font-semibold">React</span> +
