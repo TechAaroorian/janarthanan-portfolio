@@ -5,6 +5,8 @@ import {
   Code2,
   LineChart,
   GraduationCap,
+  BookOpen,
+  AtSign,
   ChevronRight,
 } from "lucide-react";
 
@@ -23,6 +25,8 @@ export const FloatingNav: React.FC = () => {
     { id: "skills", label: "Technical Skills", icon: <Code2 size={18} /> },
     { id: "timeline", label: "Skill Evolution", icon: <LineChart size={18} /> },
     { id: "education", label: "Education", icon: <GraduationCap size={18} /> },
+    { id: "articles", label: "Articles", icon: <BookOpen size={18} /> },
+    { id: "contact", label: "Contact", icon: <AtSign size={18} /> },
   ];
 
   useEffect(() => {
@@ -85,18 +89,18 @@ export const FloatingNav: React.FC = () => {
   };
 
   const totalItems = navItems.length;
-  const radius = 75;
-  const arcAngle = 120;
+  const radius = 85; // Slightly increased for 7 items
+  const arcAngle = 130; // Expanded arc angle for smooth vertical spread
 
   return (
     <>
       {/* 1. DESKTOP & TABLET: Glassmorphic Semi-Circular Floating Menu */}
       <nav
         aria-label="Semi-circular arc side menu"
-        className="fixed left-4 lg:left-8 top-1/2 -translate-y-1/2 z-50 no-print hidden md:flex flex-col gap-3.5 select-none"
+        className="fixed left-4 lg:left-8 top-1/2 -translate-y-1/2 z-50 no-print hidden md:flex flex-col gap-3 select-none"
       >
         <svg
-          className="absolute -left-6 top-1/2 -translate-y-1/2 w-32 h-[320px] pointer-events-none opacity-25 dark:opacity-35"
+          className="absolute -left-6 top-1/2 -translate-y-1/2 w-32 h-95 pointer-events-none opacity-25 dark:opacity-35"
           viewBox="0 0 100 300"
           fill="none"
         >

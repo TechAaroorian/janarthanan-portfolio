@@ -15,8 +15,8 @@ export const Header: React.FC = () => {
       {/* 3D Three.js Interactive Background Canvas */}
       <HeroCanvas />
 
-      {/* Foreground Content */}
-      <div className="relative z-10 max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+      {/* Foreground Content - CHANGED max-w-5xl TO max-w-6xl to match main sections */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
         <div>
           <div className="flex items-center gap-3 mb-2">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 backdrop-blur-xs">
@@ -34,12 +34,34 @@ export const Header: React.FC = () => {
               (with Solution Architect Responsibilities)
             </span>
           </p>
+
           <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-2xl leading-relaxed">
             Architecting scalable web and mobile applications, state boundaries
             (TanStack Query, Jotai), frontend-backend data contracts, and
             agentic AI integrations with nearly 10 years of enterprise
             experience.
           </p>
+
+          {/* Clean Location & Domain Info (No physical street address) */}
+          <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 mt-3 font-mono flex-wrap">
+            <span>📍 Thiruvarur, Tamil Nadu, India</span>
+            <span>•</span>
+            <a
+              href="mailto:janarthanan1821993@gmail.com"
+              className="hover:text-cyan-500 transition-colors underline"
+            >
+              janarthanan1821993@gmail.com
+            </a>
+            <span>•</span>
+            <a
+              href="https://janarthanan-dev.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-cyan-600 dark:text-cyan-400 hover:underline font-semibold"
+            >
+              janarthanan-dev.com
+            </a>
+          </div>
         </div>
 
         {/* Action Controls */}
