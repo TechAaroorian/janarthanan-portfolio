@@ -121,7 +121,6 @@ export const HeroCanvas: React.FC = () => {
         const i3 = i * 3;
         const initX = initialPositions[i3];
         const initY = initialPositions[i3 + 1];
-        const initZ = initialPositions[i3 + 2];
 
         // 1. Natural floating sine wave baseline
         let targetParticleX = initX + Math.cos(elapsedTime * 0.5 + initY) * 0.6;

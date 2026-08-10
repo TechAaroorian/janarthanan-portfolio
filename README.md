@@ -16,9 +16,7 @@
 
 This repository houses the source code for my interactive developer portfolio and executive web resume. Built from the ground up as a **high-performance, static SPA (Single Page Application)**, it demonstrates senior-level frontend engineering practices, custom animation math, clean state boundaries, and automated CI/CD deployment pipelines.
 
-```
-
-```
+```bash
 
               ┌─────────────────────────────────────────────────────────┐
               │                 janarthanan-dev.com                     │
@@ -26,8 +24,6 @@ This repository houses the source code for my interactive developer portfolio an
                                            │
            ┌───────────────────────────────┴───────────────────────────────┐
            ▼                                                               ▼
-
-```
 
 ┌───────────────────────────┐                                  ┌───────────────────────────┐
 │   Web Portfolio Mode      │                                  │     Print/PDF Engine      │
@@ -89,7 +85,7 @@ To run this application locally on your machine:
 ### 1. Clone the repository
 
 ```bash
-git clone [https://github.com/TechAaroorian/janarthanan-portfolio.git](https://github.com/TechAaroorian/janarthanan-portfolio.git)
+git clone https://github.com/TechAaroorian/janarthanan-portfolio.git
 cd janarthanan-portfolio
 
 ```
