@@ -13,15 +13,14 @@ body {
 }
 
 /* ==========================================================================
-   🖨️ EXACT PRINT RESUME EXPORT (Matching Original Resume PDF Colors & Header)
+   🖨️ STRICT 1-PAGE ATS-SAFE PRINT RESUME EXPORT
    ========================================================================== */
 @media print {
   @page {
     size: A4 portrait;
-    margin: 10mm 12mm 10mm 12mm;
+    margin: 6mm 10mm 6mm 10mm;
   }
 
-  /* Force background to white and force exact color rendering */
   html, body {
     background: #ffffff !important;
     color: #000000 !important;
@@ -32,12 +31,11 @@ body {
     print-color-adjust: exact !important;
   }
 
-  /* Hide ONLY the web wrapper container */
-  #web-portfolio-only {
+  #web-portfolio-only,
+  .no-print {
     display: none !important;
   }
 
-  /* Ensure the print resume container and ALL its children render cleanly */
   #print-resume-only,
   #print-resume-only * {
     visibility: visible !important;
@@ -50,14 +48,20 @@ body {
     top: 0 !important;
     width: 100% !important;
     background: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  /* Ensure flex and grid display correctly in PDF engines */
   #print-resume-only .flex {
     display: flex !important;
   }
 
   #print-resume-only .grid {
     display: grid !important;
+  }
+
+  h1, h2, h3, h4, section, div, p, li {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
   }
 }
