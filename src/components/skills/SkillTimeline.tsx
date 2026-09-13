@@ -7,7 +7,12 @@ interface SkillData {
   startYear: number;
   endYear: number;
   displayRange: string;
-  proficiency: number;
+  usage:
+    | "Current project"
+    | "Recent production use"
+    | "Earlier production use"
+    | "Architecture experience"
+    | "Recent workflow use";
   details: string;
 }
 
@@ -18,7 +23,7 @@ const skills: SkillData[] = [
     startYear: 2016.92,
     endYear: 2017.92,
     displayRange: "Dec 2016 – Dec 2017 (Approx.)",
-    proficiency: 80,
+    usage: "Earlier production use",
     details:
       "Managed database indexing, server-side business logic, and schema persistence in MySQL & Postgres during early backend tenure.",
   },
@@ -28,7 +33,7 @@ const skills: SkillData[] = [
     startYear: 2016.92,
     endYear: 2026,
     displayRange: "Dec 2016 – Present (Approx.)",
-    proficiency: 92,
+    usage: "Architecture experience",
     details:
       "Designing clean domain boundaries, decoupled modular monoliths, and robust frontend-backend API contracts.",
   },
@@ -38,7 +43,7 @@ const skills: SkillData[] = [
     startYear: 2017.92,
     endYear: 2026,
     displayRange: "Dec 2017 – Present (Approx.)",
-    proficiency: 95,
+    usage: "Current project",
     details:
       "Architecting scalable single-page applications, SSR/SSG workflows, Next.js App Router, and component libraries.",
   },
@@ -48,7 +53,7 @@ const skills: SkillData[] = [
     startYear: 2018.0,
     endYear: 2026,
     displayRange: "2018 – Present (Approx.)",
-    proficiency: 92,
+    usage: "Current project",
     details:
       "Enforcing strict type safety, generic utility types, and runtime schema validation contracts across large codebases.",
   },
@@ -58,9 +63,9 @@ const skills: SkillData[] = [
     startYear: 2018.0,
     endYear: 2020.0,
     displayRange: "2018 – 2020 (Approx.)",
-    proficiency: 85,
+    usage: "Earlier production use",
     details:
-      "Built cross-platform mobile application flows, native bridge integrations, and shared state management models.",
+      "Earlier production experience building cross-platform mobile application flows with React Native and Redux Toolkit.",
   },
   {
     name: "Testing (RTL & MSW)",
@@ -68,7 +73,7 @@ const skills: SkillData[] = [
     startYear: 2022.0,
     endYear: 2026,
     displayRange: "2022 – Present (Approx.)",
-    proficiency: 88,
+    usage: "Recent production use",
     details:
       "Established automated testing strategies using React Testing Library and Mock Service Worker (MSW) for API interception.",
   },
@@ -78,9 +83,9 @@ const skills: SkillData[] = [
     startYear: 2024.0,
     endYear: 2026,
     displayRange: "2024 – Present (Approx.)",
-    proficiency: 90,
+    usage: "Recent production use",
     details:
-      "Implemented clean server-state caching, optimistic updates, and background cache invalidation to eliminate Redux overhead.",
+      "Adopted TanStack Query with Vite for server-state caching, optimistic updates, and background invalidation across recent projects.",
   },
   {
     name: "Agentic AI & Tooling",
@@ -88,9 +93,19 @@ const skills: SkillData[] = [
     startYear: 2024.0,
     endYear: 2026,
     displayRange: "2024 – Present (Approx.)",
-    proficiency: 88,
+    usage: "Recent workflow use",
     details:
       "Repository context engineering via CLAUDE.md & .amazonq rules to guide autonomous AI agents within system boundaries.",
+  },
+  {
+    name: "TanStack Router & Start",
+    category: "Frontend & Mobile",
+    startYear: 2025.33,
+    endYear: 2026,
+    displayRange: "Approx. 8 months",
+    usage: "Recent production use",
+    details:
+      "Used TanStack Query, Router, and Start together on the final enterprise project, with responsibility for architecture, review, testing, and code quality.",
   },
 ];
 
@@ -276,12 +291,9 @@ export const SkillTimeline: React.FC = () => {
                 {selectedSkill.details}
               </p>
             </div>
-            <div className="w-full md:w-32 bg-slate-200 dark:bg-slate-800 rounded-full h-2 overflow-hidden shrink-0">
-              <div
-                className="bg-cyan-500 h-2 rounded-full"
-                style={{ width: `${selectedSkill.proficiency}%` }}
-              ></div>
-            </div>
+            <span className="shrink-0 rounded-full border border-emerald-500/25 bg-emerald-500/10 px-3 py-1 text-[11px] font-semibold text-emerald-700 dark:text-emerald-300">
+              {selectedSkill.usage}
+            </span>
           </div>
         )}
       </div>
@@ -304,6 +316,9 @@ export const SkillTimeline: React.FC = () => {
             <p className="text-xs text-slate-600 dark:text-slate-400 mt-1 leading-relaxed">
               {skill.details}
             </p>
+            <span className="mt-3 inline-flex rounded-full border border-emerald-500/25 bg-emerald-500/10 px-2.5 py-0.5 text-[10px] font-semibold text-emerald-700 dark:text-emerald-300">
+              {skill.usage}
+            </span>
           </div>
         ))}
       </div>

@@ -31,15 +31,14 @@ export const Header: React.FC = () => {
           <p className="text-lg font-medium text-cyan-600 dark:text-cyan-400 mt-1">
             Senior Software Engineer{" "}
             <span className="text-slate-500 dark:text-slate-400 font-normal text-base">
-              (with Solution Architect Responsibilities)
+              (with Solution Architecture Responsibilities)
             </span>
           </p>
 
           <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-2xl leading-relaxed">
-            Architecting scalable web and mobile applications, state boundaries
-            (TanStack Query, Jotai), frontend-backend data contracts, and
-            agentic AI integrations with nearly 10 years of enterprise
-            experience.
+            Building scalable React applications, defining state boundaries and
+            frontend-backend data contracts, and guiding AI-assisted engineering
+            with nearly 10 years of enterprise experience.
           </p>
 
           {/* Location & Links (pointer-events-auto re-enables clicking on links) */}

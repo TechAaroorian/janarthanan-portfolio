@@ -9,6 +9,7 @@ import { PrintResume } from "./components/PrintResume";
 import { DevToArticles } from "./components/DevToArticles";
 import { Footer } from "./components/Footer";
 import { Summary } from "./components/profile/Summary";
+import { FeaturedProject } from "./components/projects/FeaturedProject";
 
 export default function App() {
   return (
@@ -28,6 +29,7 @@ export default function App() {
           <Header />
           <main className="max-w-6xl mx-auto px-4 py-8 space-y-12">
             <Summary />
+            <FeaturedProject />
             <Experience />
             <TechnicalSkills />
             <SkillTimeline />

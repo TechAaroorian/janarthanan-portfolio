@@ -7,7 +7,7 @@
 [![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 
 > **Live Portfolio:** [https://janarthanan-dev.com](https://janarthanan-dev.com)  
-> **Role Target:** Senior Frontend Engineer / Lead Frontend Architect / Solution Architect  
+> **Role Target:** Senior Software Engineer / Lead Frontend Engineer (Solution Architecture Responsibilities)
 > **Experience:** Nearly 10 Years in Enterprise Web & Mobile Architecture
 
 ---

@@ -2,12 +2,12 @@ import React from "react";
 
 export const PrintResume: React.FC = () => {
   return (
-    <div className="w-full text-slate-900 bg-white p-0 font-sans text-[13.5px] leading-[1.38] border-none shadow-none">
+    <div className="w-full text-slate-900 bg-white p-0 font-sans text-[12.5px] leading-[1.3] border-none shadow-none">
       {/* 1. HEADER SECTION */}
       <div className="border-b-2 border-[#0f172a] pb-2 mb-2.5 block text-left">
         <div className="flex justify-between items-baseline mb-1">
           <h1 className="text-[28px] font-black text-[#0f172a] tracking-tight leading-none">
-            Janarthanan Soundararajan
+            Janarthanan Soundhararajan
           </h1>
           <span className="font-semibold text-slate-600 font-mono text-[12.5px]">
             Thiruvarur, Tamil Nadu, India
@@ -15,11 +15,11 @@ export const PrintResume: React.FC = () => {
         </div>
 
         <p className="text-[15px] font-bold text-[#0284c7] tracking-wider uppercase mb-1.5">
-          Senior Software Engineer (with Solution Architect Responsibilities)
+          Senior Software Engineer (with Solution Architecture Responsibilities)
         </p>
 
         {/* Contact Info Row */}
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[12.5px] text-slate-700">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-[12px] text-slate-700">
           <span className="flex items-center gap-1">
             <strong className="text-[#0f172a]">Phone:</strong> +91 8610945115
           </span>
@@ -31,7 +31,21 @@ export const PrintResume: React.FC = () => {
           <span className="text-slate-300">•</span>
           <span className="flex items-center gap-1">
             <strong className="text-[#0f172a]">Domain:</strong>{" "}
-            janarthanan-dev.com
+            <a href="https://janarthanan-dev.com">janarthanan-dev.com</a>
+          </span>
+          <span className="text-slate-300">•</span>
+          <span className="flex items-center gap-1">
+            <strong className="text-[#0f172a]">GitHub:</strong>{" "}
+            <a href="https://github.com/TechAaroorian">
+              github.com/TechAaroorian
+            </a>
+          </span>
+          <span className="text-slate-300">•</span>
+          <span className="flex items-center gap-1">
+            <strong className="text-[#0f172a]">LinkedIn:</strong>{" "}
+            <a href="https://www.linkedin.com/in/janarthanan-soundararajan-0544ab85/">
+              linkedin.com/in/janarthanan-soundararajan-0544ab85
+            </a>
           </span>
         </div>
       </div>
@@ -45,14 +59,13 @@ export const PrintResume: React.FC = () => {
           </h2>
         </div>
         <p className="text-slate-800 text-justify pt-0.5">
-          Senior Frontend Developer and Solution Architect with nearly 10 years
-          of experience in product engineering, specializing in the
-          TypeScript/JavaScript ecosystem for web and mobile. Combines deep UI
-          engineering expertise with a strong foundational background in backend
-          systems and database design across Monolithic, Modular Monolith
-          (Modulith), and Microservices architectures. Focused on optimizing
-          state boundaries, managing data contracts, and configuring repository
-          AI context rules (CLAUDE.md, .amazonq) for autonomous development.
+          Senior Software Engineer with solution architecture responsibilities
+          and nearly 10 years of product-development experience. Specializes in
+          React and TypeScript, with recent production experience using TanStack
+          Query and the wider TanStack ecosystem. Backend and database experience
+          supports practical work across monolith, modular monolith, and
+          microservices architectures. Uses AI-assisted workflows while retaining
+          responsibility for architecture, review, testing, and code quality.
         </p>
       </section>
 
@@ -67,21 +80,19 @@ export const PrintResume: React.FC = () => {
 
         <div className="grid grid-cols-[145px_1fr] gap-x-2 gap-y-1.5 pt-0.5">
           <div className="font-bold text-[#0f172a] self-center">
-            Frontend & Mobile:
+            Current Frontend:
           </div>
           <div className="flex flex-wrap gap-1 text-slate-800">
             {[
-              "React JS",
-              "Next JS",
-              "React Native",
+              "React",
+              "TypeScript",
+              "Vite",
+              "Next.js",
               "TanStack Query",
+              "TanStack Router",
+              "TanStack Start",
               "Jotai",
-              "Redux",
-              "Redux Toolkit",
-              "PWA",
               "Tailwind CSS",
-              "Bootstrap",
-              "Storybook",
             ].map((skill, i) => (
               <span
                 key={i}
@@ -99,9 +110,8 @@ export const PrintResume: React.FC = () => {
             {[
               "Modular Monoliths (Modulith)",
               "Microservices",
-              "Monolithic Architecture",
               "State Boundaries",
-              "Frontend-Backend Data Contracts",
+              "API Data Contracts",
             ].map((skill, i) => (
               <span
                 key={i}
@@ -120,7 +130,7 @@ export const PrintResume: React.FC = () => {
               "Claude Code",
               "Amazon Q",
               "GitHub Copilot",
-              "Repository Context Engineering (CLAUDE.md, .amazonq)",
+              "Repository Context Engineering",
             ].map((skill, i) => (
               <span
                 key={i}
@@ -136,8 +146,7 @@ export const PrintResume: React.FC = () => {
           </div>
           <div className="flex flex-wrap gap-1 text-slate-800">
             {[
-              "Unit Testing",
-              "End-to-End (E2E) Testing",
+              "Vitest",
               "React Testing Library",
               "Mock Service Worker (MSW)",
             ].map((skill, i) => (
@@ -151,10 +160,10 @@ export const PrintResume: React.FC = () => {
           </div>
 
           <div className="font-bold text-[#0f172a] self-center">
-            Languages & DB:
+            Backend & Data:
           </div>
           <div className="flex flex-wrap gap-1 text-slate-800">
-            {["TypeScript", "JavaScript", "Python", "MySQL"].map((skill, i) => (
+            {["Node.js", "PostgreSQL", "MySQL", "Prisma"].map((skill, i) => (
               <span
                 key={i}
                 className="bg-slate-100 border border-slate-200 px-1 py-0 rounded text-[12px] font-medium text-slate-800"
@@ -165,10 +174,10 @@ export const PrintResume: React.FC = () => {
           </div>
 
           <div className="font-bold text-[#0f172a] self-center">
-            Design Tools:
+            Earlier Experience:
           </div>
           <div className="flex flex-wrap gap-1 text-slate-800">
-            {["Figma", "Inkscape"].map((skill, i) => (
+            {["Redux", "React Native", "Redux Toolkit", "Scala"].map((skill, i) => (
               <span
                 key={i}
                 className="bg-slate-100 border border-slate-200 px-1 py-0 rounded text-[12px] font-medium text-slate-800"
@@ -196,7 +205,7 @@ export const PrintResume: React.FC = () => {
               Senior Software Engineer
             </h3>
             <span className="font-mono text-slate-700 font-semibold text-[12.5px]">
-              Jan 2020 – July 2026
+              Jan 2020 – Jul 2026
             </span>
           </div>
           <div className="flex justify-between items-baseline mb-1">
@@ -210,10 +219,9 @@ export const PrintResume: React.FC = () => {
           </div>
           <ul className="list-disc pl-3.5 text-slate-800 space-y-1">
             <li>
-              <strong>Architectural Leadership (2024 – 2026):</strong> Appointed
-              to drive technical blueprints, establish scalable frontend
-              architectures, and select modern tech stacks (Next.js, TanStack
-              Query) interfacing cleanly with backend microservices.
+              <strong>Architectural Leadership (2024 – 2026):</strong> Led
+              technical blueprints, frontend architecture, stack selection, and
+              integration boundaries for enterprise applications.
             </li>
             <li>
               <strong>System Integration & Data Contracts:</strong> Designed
@@ -222,16 +230,16 @@ export const PrintResume: React.FC = () => {
               architectures.
             </li>
             <li>
-              <strong>AI Workspace & Context Engineering:</strong> Configured
-              CLAUDE.md and .amazonq workspace rules to guide autonomous AI
-              agents (Claude Code, Amazon Q, Copilot) to strictly respect system
-              boundaries and folder structures.
+              <strong>AI-Assisted Engineering:</strong> Used AI-assisted
+              development on the final project while retaining responsibility
+              for architecture, implementation review, testing, and code quality;
+              configured repository guidance for established boundaries.
             </li>
             <li>
-              <strong>Frontend & Mobile Engineering:</strong> Architected
-              cross-platform web and mobile apps using React, Next.js, and React
-              Native, utilizing TanStack Query and Jotai for zero-overhead
-              server state caching.
+              <strong>Frontend Stack Evolution:</strong> Built earlier React
+              applications with Redux; adopted TanStack Query with Vite during
+              the last two-plus years and used Query, Router, and Start together
+              on the final eight-month project. Used Next.js on one project.
             </li>
             <li>
               <strong>Client & Product Coordination:</strong> Met directly with
@@ -242,8 +250,8 @@ export const PrintResume: React.FC = () => {
             <li>
               <strong>Testing & Release Stability:</strong> Established local
               test automation using React Testing Library (RTL) and Mock Service
-              Worker (MSW) to isolate frontend testing and mock API responses
-              for zero-friction releases.
+              Worker (MSW) to isolate frontend behavior and improve release
+              confidence.
             </li>
           </ul>
         </div>
@@ -278,7 +286,29 @@ export const PrintResume: React.FC = () => {
         </div>
       </section>
 
-      {/* 5. EDUCATION */}
+      {/* 5. PORTFOLIO PROJECT */}
+      <section className="mb-2 break-inside-avoid">
+        <div className="flex items-center gap-1.5 mb-1 border-b border-[#0f172a] pb-0.5">
+          <span className="w-1.5 h-1.5 bg-[#0284c7] rounded-xs shrink-0" />
+          <h2 className="text-[15px] font-bold text-[#0f172a] uppercase tracking-wider">
+            Portfolio Project
+          </h2>
+        </div>
+        <div className="flex justify-between items-baseline">
+          <strong>SlotSyncro — Scheduling Platform</strong>
+          <span className="font-mono text-slate-700 font-semibold text-[12px]">
+            In Progress | github.com/TechAaroorian/slotsyncro
+          </span>
+        </div>
+        <p className="text-slate-800">
+          Building a timezone-aware scheduling platform with Next.js App Router,
+          TypeScript, Turborepo, PostgreSQL, Prisma, Auth.js, Server Actions, and
+          Vitest. Implemented recurring availability, event types, slot
+          calculation, conflict checks, direct booking, and CI coverage reporting.
+        </p>
+      </section>
+
+      {/* 6. EDUCATION */}
       <section className="break-inside-avoid">
         <div className="flex items-center gap-1.5 mb-1 border-b border-[#0f172a] pb-0.5">
           <span className="w-1.5 h-1.5 bg-[#0284c7] rounded-xs shrink-0" />

@@ -24,15 +24,15 @@ const experiences: Role[] = [
   {
     title: "Senior Software Engineer",
     officialTitleNote:
-      "Functional Scope: Solution Architect & Lead Frontend Engineer",
+      "Functional Scope: Solution Architecture & Lead Frontend Engineering",
     company: "OneData Software Solutions Pvt. Ltd",
-    period: "Jan 2020 – July 2026",
+    period: "Jan 2020 – Jul 2026",
     location: "India",
     highlights: [
       {
         category: "Architectural Leadership (2024 – 2026)",
         description:
-          "Appointed to drive end-to-end technical blueprints, establish scalable frontend architectures, and select modern tech stacks (Next.js, Turbopack, TanStack Query) that cleanly interface with backend microservices.",
+          "Led technical blueprints, frontend architecture, stack selection, and integration boundaries for enterprise applications working with backend services.",
         tags: [
           "Solution Architecture",
           "Next.js",
@@ -52,21 +52,23 @@ const experiences: Role[] = [
         ],
       },
       {
-        category: "AI Workspace & Context Engineering",
+        category: "AI-Assisted Engineering",
         description:
-          "Configured project-level AI rules within CLAUDE.md and .amazonq repository settings, guiding autonomous AI agents (Claude Code, Amazon Q, Copilot) to strictly respect system boundaries and existing folder structures.",
+          "Used AI-assisted development on the final enterprise project while retaining responsibility for architecture, implementation review, testing, and code quality. Configured CLAUDE.md and .amazonq repository guidance for established boundaries.",
         tags: ["CLAUDE.md", ".amazonq", "Claude Code", "Agentic AI Workflows"],
       },
       {
-        category: "Frontend & Mobile Engineering",
+        category: "Frontend Stack Evolution",
         description:
-          "Architected web and mobile applications using React, Next.js, and React Native. Implemented TanStack Query and Jotai to handle server-state caching cleanly and eliminate unnecessary global state overhead.",
+          "Built earlier React applications with Redux, then adopted TanStack Query with Vite for server-state management during the last two-plus years. Used TanStack Query, Router, and Start together on the final eight-month project, with Next.js used on one intermediate project.",
         tags: [
           "React JS",
+          "Vite",
           "Next.js",
-          "React Native",
           "TanStack Query",
-          "Jotai",
+          "TanStack Router",
+          "TanStack Start",
+          "Redux",
         ],
       },
       {
@@ -82,7 +84,7 @@ const experiences: Role[] = [
       {
         category: "Testing & Release Stability",
         description:
-          "Established local test automation strategies using React Testing Library (RTL) and Mock Service Worker (MSW) to isolate frontend testing and mock backend API responses for zero-friction deployments.",
+          "Established local test automation using React Testing Library (RTL) and Mock Service Worker (MSW) to isolate frontend behavior and improve release confidence.",
         tags: ["React Testing Library", "MSW", "E2E Testing", "Mock Services"],
       },
     ],

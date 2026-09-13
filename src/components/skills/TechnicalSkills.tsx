@@ -1,5 +1,5 @@
 import React from "react";
-import { Code2, Layers, Cpu, TestTube2, Database, Palette } from "lucide-react";
+import { Code2, Layers, Cpu, TestTube2, Database, History } from "lucide-react";
 
 interface SkillGroup {
   category: string;
@@ -10,17 +10,17 @@ interface SkillGroup {
 export const TechnicalSkills: React.FC = () => {
   const skillGroups: SkillGroup[] = [
     {
-      category: "Frontend & Mobile",
+      category: "Current Frontend",
       icon: <Code2 size={18} className="text-cyan-500" />,
       skills: [
-        { name: "React JS", highlight: true },
-        { name: "Next.js", note: "App Router / SSR" },
-        { name: "React Native", note: "2 yrs Mobile" },
+        { name: "React", highlight: true },
+        { name: "TypeScript", highlight: true },
+        { name: "Vite" },
+        { name: "Next.js", note: "Current: SlotSyncro" },
         { name: "TanStack Query", highlight: true, note: "2+ yrs" },
-        { name: "Jotai & Redux Toolkit" },
-        { name: "Turbopack", highlight: true, note: "8 mos Enterprise" },
+        { name: "TanStack Router & Start", note: "8 mos Enterprise" },
+        { name: "Jotai" },
         { name: "Tailwind CSS v4" },
-        { name: "Storybook" },
       ],
     },
     {
@@ -37,7 +37,7 @@ export const TechnicalSkills: React.FC = () => {
       category: "AI Workflows & Context Eng.",
       icon: <Cpu size={18} className="text-amber-500" />,
       skills: [
-        { name: "CLAUDE.md & amazonq Configs", highlight: true },
+        { name: "CLAUDE.md & .amazonq Configs", highlight: true },
         { name: "Claude Code" },
         { name: "Amazon Q" },
         { name: "GitHub Copilot" },
@@ -56,7 +56,6 @@ export const TechnicalSkills: React.FC = () => {
       category: "Languages, Databases & ORMs",
       icon: <Database size={18} className="text-purple-500" />,
       skills: [
-        { name: "TypeScript", highlight: true },
         { name: "JavaScript (ES6+)" },
         { name: "Scala", note: "Backend Origins" },
         { name: "MySQL" },
@@ -65,12 +64,13 @@ export const TechnicalSkills: React.FC = () => {
       ],
     },
     {
-      category: "Design & Tooling",
-      icon: <Palette size={18} className="text-rose-500" />,
+      category: "Earlier Production Experience",
+      icon: <History size={18} className="text-rose-500" />,
       skills: [
-        { name: "Figma" },
-        { name: "Inkscape" },
-        { name: "Git & GitHub Actions" },
+        { name: "Redux", note: "Earlier React projects" },
+        { name: "React Native", note: "Earlier mobile projects" },
+        { name: "Redux Toolkit", note: "React Native" },
+        { name: "Bootstrap" },
       ],
     },
   ];
