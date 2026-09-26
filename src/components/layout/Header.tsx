@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
           <div className="flex items-center gap-3 mb-2">
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 border border-emerald-500/20 backdrop-blur-xs">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-              Immediately Available • 0 Days Notice Period
+              Immediately Available • 0 Days Notice • Last Working Day: Jul 17, 2026
             </span>
           </div>
 
@@ -36,14 +36,17 @@ export const Header: React.FC = () => {
           </p>
 
           <p className="text-sm text-slate-600 dark:text-slate-400 mt-2 max-w-2xl leading-relaxed">
-            Building scalable React applications, defining state boundaries and
-            frontend-backend data contracts, and guiding AI-assisted engineering
-            with nearly 10 years of enterprise experience.
+            Architecting scalable React & Next.js systems, defining clean state boundaries
+            and decoupled API contracts, with ~10 years of enterprise product experience.
           </p>
 
           {/* Location & Links (pointer-events-auto re-enables clicking on links) */}
           <div className="flex items-center gap-3 text-xs text-slate-500 dark:text-slate-400 mt-3 font-mono flex-wrap pointer-events-auto">
-            <span>📍 Thiruvarur, Tamil Nadu, India</span>
+            <span>📍 Thiruvarur, Tamil Nadu</span>
+            <span>•</span>
+            <span className="text-emerald-600 dark:text-emerald-400 font-semibold">
+              Remote / Hybrid / Onsite (Chennai, Coimbatore, Trichy, Puducherry)
+            </span>
             <span>•</span>
             <a
               href="mailto:janarthanan1821993@gmail.com"

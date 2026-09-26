@@ -18,14 +18,14 @@ interface SkillData {
 
 const skills: SkillData[] = [
   {
-    name: "Scala with Postgres",
+    name: "Scala & MySQL",
     category: "Backend & Testing",
     startYear: 2016.92,
-    endYear: 2017.92,
-    displayRange: "Dec 2016 – Dec 2017 (Approx.)",
+    endYear: 2018.5,
+    displayRange: "2016 – 2018 (Approx.)",
     usage: "Earlier production use",
     details:
-      "Managed database indexing, server-side business logic, and schema persistence in MySQL & Postgres during early backend tenure.",
+      "Managed database indexing, server-side business logic, and schema persistence in MySQL & Scala during early career.",
   },
   {
     name: "Monolith & Services",
@@ -78,14 +78,14 @@ const skills: SkillData[] = [
       "Established automated testing strategies using React Testing Library and Mock Service Worker (MSW) for API interception.",
   },
   {
-    name: "TanStack Query",
+    name: "TanStack",
     category: "Frontend & Mobile",
     startYear: 2024.0,
     endYear: 2026,
     displayRange: "2024 – Present (Approx.)",
     usage: "Recent production use",
     details:
-      "Adopted TanStack Query with Vite for server-state caching, optimistic updates, and background invalidation across recent projects.",
+      "Adopted TanStack (Query, Router, Start) for server-state caching, optimistic updates, and type-safe routing across recent enterprise projects.",
   },
   {
     name: "Agentic AI & Tooling",
@@ -98,14 +98,14 @@ const skills: SkillData[] = [
       "Repository context engineering via CLAUDE.md & .amazonq rules to guide autonomous AI agents within system boundaries.",
   },
   {
-    name: "TanStack Router & Start",
+    name: "Next.js & Prisma",
     category: "Frontend & Mobile",
-    startYear: 2025.33,
+    startYear: 2024.5,
     endYear: 2026,
-    displayRange: "Approx. 8 months",
-    usage: "Recent production use",
+    displayRange: "2024 – Present (Approx.)",
+    usage: "Current project",
     details:
-      "Used TanStack Query, Router, and Start together on the final enterprise project, with responsibility for architecture, review, testing, and code quality.",
+      "Architecting full-stack applications (SlotSyncro) with Next.js App Router, Server Actions, PostgreSQL, and Prisma ORM.",
   },
 ];
 

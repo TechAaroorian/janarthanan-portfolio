@@ -26,13 +26,13 @@ const experiences: Role[] = [
     officialTitleNote:
       "Functional Scope: Solution Architecture & Lead Frontend Engineering",
     company: "OneData Software Solutions Pvt. Ltd",
-    period: "Jan 2020 – Jul 2026",
+    period: "Jan 2020 – Jul 17, 2026 (Last Working Day: Jul 17, 2026)",
     location: "India",
     highlights: [
       {
         category: "Architectural Leadership (2024 – 2026)",
         description:
-          "Led technical blueprints, frontend architecture, stack selection, and integration boundaries for enterprise applications working with backend services.",
+          "Defined technical blueprints, frontend architecture, stack selection, and integration boundaries for enterprise applications.",
         tags: [
           "Solution Architecture",
           "Next.js",
@@ -43,7 +43,7 @@ const experiences: Role[] = [
       {
         category: "System Integration & Data Contracts",
         description:
-          "Leveraged deep background in monoliths, modular monoliths (moduliths), and microservices to design decoupled data contracts between frontend apps and backend service components.",
+          "Designed decoupled API data contracts and state boundaries across monolith, modulith, and microservice architectures.",
         tags: [
           "Modulith",
           "Microservices",
@@ -54,27 +54,26 @@ const experiences: Role[] = [
       {
         category: "AI-Assisted Engineering",
         description:
-          "Used AI-assisted development on the final enterprise project while retaining responsibility for architecture, implementation review, testing, and code quality. Configured CLAUDE.md and .amazonq repository guidance for established boundaries.",
+          "Guided AI-assisted development (Claude Code, Amazon Q) with repository boundary rules, maintaining full ownership of architecture, reviews, and test quality.",
         tags: ["CLAUDE.md", ".amazonq", "Claude Code", "Agentic AI Workflows"],
       },
       {
         category: "Frontend Stack Evolution",
         description:
-          "Built earlier React applications with Redux, then adopted TanStack Query with Vite for server-state management during the last two-plus years. Used TanStack Query, Router, and Start together on the final eight-month project, with Next.js used on one intermediate project.",
+          "Modernized legacy Redux workflows to the TanStack ecosystem (Query, Router, Start) and Next.js for server-state caching, type-safe routing, and SSR.",
         tags: [
           "React JS",
-          "Vite",
           "Next.js",
+          "TanStack",
           "TanStack Query",
-          "TanStack Router",
-          "TanStack Start",
+          "TypeScript",
           "Redux",
         ],
       },
       {
-        category: "Product & Client Coordination",
+        category: "Client & Product Delivery",
         description:
-          "Engineered solution specifications directly with client stakeholders, mapping business requirements into technical task breakdowns and leading feature delivery end-to-end.",
+          "Partnered directly with stakeholders to translate business requirements into technical task breakdowns and delivered features end-to-end.",
         tags: [
           "Technical Specifications",
           "Client Leadership",
@@ -84,7 +83,7 @@ const experiences: Role[] = [
       {
         category: "Testing & Release Stability",
         description:
-          "Established local test automation using React Testing Library (RTL) and Mock Service Worker (MSW) to isolate frontend behavior and improve release confidence.",
+          "Established automated testing with React Testing Library (RTL) and Mock Service Worker (MSW), isolating frontend logic and preventing regressions.",
         tags: ["React Testing Library", "MSW", "E2E Testing", "Mock Services"],
       },
     ],
@@ -98,13 +97,13 @@ const experiences: Role[] = [
       {
         category: "Backend & Database Foundations",
         description:
-          "Built a strong backend foundation by engineering server-side business logic (Scala, Node.js), managing database indexing, and optimizing data persistence schemas using MySQL.",
+          "Engineered server logic (Scala), managed indexing, and optimized persistence schemas using MySQL.",
         tags: ["Scala", "MySQL", "Database Indexing", "Server Logic"],
       },
       {
         category: "Frontend Evolution",
         description:
-          "Transitioned core technical focus toward interactive user interfaces, asynchronous state flows, and modern JavaScript/React frontend frameworks during the latter half of tenure.",
+          "Transitioned focus toward modern React UI development, asynchronous state management, and reusable components.",
         tags: ["React JS", "JavaScript (ES6+)", "Redux", "UI Logic"],
       },
     ],

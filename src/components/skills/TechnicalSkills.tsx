@@ -15,10 +15,8 @@ export const TechnicalSkills: React.FC = () => {
       skills: [
         { name: "React", highlight: true },
         { name: "TypeScript", highlight: true },
-        { name: "Vite" },
-        { name: "Next.js", note: "Current: SlotSyncro" },
-        { name: "TanStack Query", highlight: true, note: "2+ yrs" },
-        { name: "TanStack Router & Start", note: "8 mos Enterprise" },
+        { name: "Next.js", note: "SlotSyncro & SSR" },
+        { name: "TanStack", highlight: true, note: "Query, Router, Start" },
         { name: "Jotai" },
         { name: "Tailwind CSS v4" },
       ],
@@ -40,7 +38,6 @@ export const TechnicalSkills: React.FC = () => {
         { name: "CLAUDE.md & .amazonq Configs", highlight: true },
         { name: "Claude Code" },
         { name: "Amazon Q" },
-        { name: "GitHub Copilot" },
       ],
     },
     {
@@ -56,10 +53,9 @@ export const TechnicalSkills: React.FC = () => {
       category: "Languages, Databases & ORMs",
       icon: <Database size={18} className="text-purple-500" />,
       skills: [
-        { name: "JavaScript (ES6+)" },
-        { name: "Scala", note: "Backend Origins" },
-        { name: "MySQL" },
+        { name: "PostgreSQL", highlight: true },
         { name: "Prisma ORM", note: "Active Build Stack" },
+        { name: "JavaScript (ES6+)" },
         { name: "Python" },
       ],
     },
@@ -67,6 +63,8 @@ export const TechnicalSkills: React.FC = () => {
       category: "Earlier Production Experience",
       icon: <History size={18} className="text-rose-500" />,
       skills: [
+        { name: "MySQL", note: "Early Backend Persistence" },
+        { name: "Scala", note: "Backend Origins" },
         { name: "Redux", note: "Earlier React projects" },
         { name: "React Native", note: "Earlier mobile projects" },
         { name: "Redux Toolkit", note: "React Native" },
@@ -85,7 +83,7 @@ export const TechnicalSkills: React.FC = () => {
           Technical Capabilities
         </h2>
         <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
-          Categorized tech stack, build tooling, and architectural domains.
+          Categorized tech stack, modern database tooling, and architectural domains.
         </p>
       </div>
 

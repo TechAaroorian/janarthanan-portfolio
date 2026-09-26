@@ -22,7 +22,7 @@ export const FloatingNav: React.FC = () => {
 
   const navItems: NavItem[] = [
     { id: "summary", label: "Summary", icon: <User size={18} /> },
-    { id: "projects", label: "Portfolio Project", icon: <FolderKanban size={18} /> },
+    { id: "projects", label: "Projects", icon: <FolderKanban size={18} /> },
     { id: "experience", label: "Experience", icon: <Briefcase size={18} /> },
     { id: "skills", label: "Technical Skills", icon: <Code2 size={18} /> },
     { id: "timeline", label: "Skill Evolution", icon: <LineChart size={18} /> },

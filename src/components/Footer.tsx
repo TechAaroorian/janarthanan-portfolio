@@ -35,11 +35,11 @@ export const Footer: React.FC = () => {
               </span>
             </div>
             {/* General Location Display (No Street Address) */}
-            <p className="text-xs text-slate-400 mt-2 flex items-center gap-1 font-mono">
+            <p className="text-xs text-slate-400 mt-2 flex items-center gap-1 font-mono flex-wrap">
               <span>📍 Thiruvarur, Tamil Nadu, India</span>
               <span className="text-slate-600">•</span>
-              <span className="text-slate-400">
-                Available Globally (Remote / Hybrid)
+              <span className="text-cyan-400">
+                Remote / Hybrid / Onsite (Chennai, Coimbatore, Trichy, Puducherry)
               </span>
             </p>
           </div>
@@ -81,6 +81,14 @@ export const Footer: React.FC = () => {
                   className="hover:text-cyan-400 transition-colors"
                 >
                   Summary
+                </a>
+              </li>
+              <li>
+                <a
+                  href="#projects"
+                  className="hover:text-cyan-400 transition-colors"
+                >
+                  Featured Projects
                 </a>
               </li>
               <li>

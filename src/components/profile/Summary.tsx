@@ -7,7 +7,7 @@ export const Summary: React.FC = () => {
       icon: <Layers size={18} className="text-cyan-500" />,
       title: "Modern Frontend Engineering",
       description:
-        "React, TypeScript, Vite, Next.js, TanStack Query, Router and Start",
+        "React, TypeScript, Next.js, TanStack (Query, Router, Start), Jotai, Tailwind CSS",
     },
     {
       icon: <GitBranch size={18} className="text-emerald-500" />,
@@ -19,13 +19,13 @@ export const Summary: React.FC = () => {
       icon: <Terminal size={18} className="text-amber-500" />,
       title: "Agentic AI Alignment",
       description:
-        "Repository Context Engineering (CLAUDE.md, .amazonq), Claude Code, Amazon Q, Copilot",
+        "Repository Context Engineering (CLAUDE.md, .amazonq), Claude Code, Amazon Q",
     },
     {
       icon: <Cpu size={18} className="text-indigo-500" />,
-      title: "Testing & Backend Roots",
+      title: "Testing & Full-Stack Reliability",
       description:
-        "React Testing Library, Mock Service Worker (MSW), Node.js, Express, MySQL",
+        "React Testing Library, Mock Service Worker (MSW), PostgreSQL, Prisma ORM",
     },
   ];
 
@@ -46,23 +46,7 @@ export const Summary: React.FC = () => {
 
       {/* Narrative Summary */}
       <p className="text-sm md:text-base text-slate-700 dark:text-slate-300 leading-relaxed max-w-4xl">
-        Senior Software Engineer with solution architecture responsibilities
-        and nearly ten years of product-development experience. Specializes in
-        React and TypeScript, with recent production experience using TanStack
-        Query and the wider TanStack ecosystem. Earlier work included Redux and
-        React Native; current independent product development uses Next.js.
-        Backend and database experience supports practical work across monolith,
-        modular monolith, and microservices architectures. Also experienced in
-        configuring project-level AI rules (such as{" "}
-        <code className="px-1.5 py-0.5 bg-slate-200 dark:bg-slate-800 rounded text-xs font-mono">
-          CLAUDE.md
-        </code>{" "}
-        and{" "}
-        <code className="px-1.5 py-0.5 bg-slate-200 dark:bg-slate-800 rounded text-xs font-mono">
-          .amazonq
-        </code>{" "}
-        configurations), while retaining responsibility for architecture,
-        implementation review, testing, and code quality.
+        Senior Software Engineer with solution architecture responsibilities and ~10 years building enterprise web products. Specializes in React, TypeScript, Next.js, and the TanStack ecosystem, designing decoupled state boundaries, modular monoliths (modulith), and microservice data contracts. Creator of open-source developer tools (Yuwbrndr) and full-stack web platforms (SlotSyncro). Delivers production reliability using PostgreSQL, Prisma ORM, automated testing (Vitest, RTL, MSW), and agentic AI workflows with strict code ownership.
       </p>
 
       {/* Interactive Feature Cards for Web View */}
