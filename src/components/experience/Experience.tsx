@@ -97,8 +97,8 @@ const experiences: Role[] = [
       {
         category: "Backend & Database Foundations",
         description:
-          "Engineered server logic (Scala), managed indexing, and optimized persistence schemas using MySQL.",
-        tags: ["Scala", "MySQL", "Database Indexing", "Server Logic"],
+          "Developed application and server-side logic using Python and Scala, managed indexing, and optimized persistence schemas using MySQL.",
+        tags: ["Python", "Scala", "MySQL", "Database Indexing", "Server Logic"],
       },
       {
         category: "Frontend Evolution",

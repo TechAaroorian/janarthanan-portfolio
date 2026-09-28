@@ -53,10 +53,14 @@ export const TechnicalSkills: React.FC = () => {
       category: "Languages, Databases & ORMs",
       icon: <Database size={18} className="text-purple-500" />,
       skills: [
+        {
+          name: "Python",
+          highlight: true,
+          note: "Foundational · 1+ year early-career experience · Skills kept current",
+        },
         { name: "PostgreSQL", highlight: true },
         { name: "Prisma ORM", note: "Active Build Stack" },
         { name: "JavaScript (ES6+)" },
-        { name: "Python" },
       ],
     },
     {

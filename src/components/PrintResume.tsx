@@ -100,12 +100,12 @@ export const PrintResume: React.FC = () => {
 
           <div className="font-bold text-[#0f172a]">Backend & Data:</div>
           <div className="text-slate-800">
-            PostgreSQL, Prisma ORM
+            Python (foundational; 1+ year early-career experience), PostgreSQL, Prisma ORM
           </div>
 
           <div className="font-bold text-[#0f172a]">Earlier Experience:</div>
           <div className="text-slate-800">
-            MySQL, Redux, React Native, Redux Toolkit, Scala
+            Python, MySQL, Redux, React Native, Redux Toolkit, Scala
           </div>
         </div>
       </section>
@@ -176,7 +176,7 @@ export const PrintResume: React.FC = () => {
           </div>
           <ul className="list-disc pl-3 text-slate-800 space-y-0.5">
             <li>
-              <strong>Backend & Database Foundations:</strong> Engineered server logic (Scala), managed indexing, and optimized persistence schemas using MySQL.
+              <strong>Backend & Database Foundations:</strong> Developed application and server-side logic using Python and Scala, managed indexing, and optimized persistence schemas using MySQL.
             </li>
             <li>
               <strong>Frontend Evolution:</strong> Transitioned focus toward modern React UI development, asynchronous state management, and reusable components.

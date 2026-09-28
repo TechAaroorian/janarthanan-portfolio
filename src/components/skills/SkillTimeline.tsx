@@ -18,14 +18,14 @@ interface SkillData {
 
 const skills: SkillData[] = [
   {
-    name: "Scala & MySQL",
+    name: "Python, Scala & MySQL",
     category: "Backend & Testing",
     startYear: 2016.92,
     endYear: 2018.5,
     displayRange: "2016 – 2018 (Approx.)",
     usage: "Earlier production use",
     details:
-      "Managed database indexing, server-side business logic, and schema persistence in MySQL & Scala during early career.",
+      "Built application and server-side logic with Python and Scala, while managing MySQL indexing and schema persistence during early career; Python foundations remain actively maintained.",
   },
   {
     name: "Monolith & Services",
